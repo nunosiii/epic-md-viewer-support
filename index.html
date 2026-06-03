@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epic MD Viewer — Native Markdown Viewer for macOS</title>
-  <meta name="description" content="The focused, native macOS markdown viewer. Opens in under 500ms. Live preview, Mermaid diagrams, syntax highlighting, document outline. $9.99 one-time.">
+  <title>Support — Epic MD Viewer</title>
+  <meta name="description" content="Support, help, and FAQ for Epic MD Viewer, a native macOS Markdown viewer. Contact us at nunosiii@gmail.com.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,645 +17,189 @@
       --bg: #0d0d0f;
       --surface: #131316;
       --surface2: #18181c;
-      --surface3: #1e1e23;
       --border: rgba(255,255,255,0.08);
-      --divider: rgba(255,255,255,0.05);
       --text: #e8e8ec;
       --muted: #8888a0;
-      --faint: #44445a;
       --font: 'Satoshi', 'Inter', sans-serif;
       --mono: 'JetBrains Mono', monospace;
-      --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
-      --radius-xl: 24px;
-      --shadow-card: 0 2px 8px rgba(0,0,0,0.3), 0 16px 48px rgba(0,0,0,0.4);
     }
-    [data-theme="light"] {
-      --bg: #f5f5f0;
-      --surface: #ffffff;
-      --surface2: #f9f9f6;
-      --surface3: #f0f0eb;
-      --border: rgba(0,0,0,0.08);
-      --divider: rgba(0,0,0,0.05);
-      --text: #1a1a24;
-      --muted: #666678;
-      --faint: #aaaabc;
-      --teal: #3b6ef0;
-      --teal-dim: rgba(59,110,240,0.1);
-      --teal-border: rgba(59,110,240,0.28);
-      --shadow-card: 0 2px 8px rgba(0,0,0,0.06), 0 16px 48px rgba(0,0,0,0.08);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: var(--font);
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      transition: background 0.2s, color 0.2s;
+      line-height: 1.7;
+      padding: 0 1rem;
     }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .container-narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-
-    /* ---- NAV ---- */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 32px; height: 64px;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--divider);
+    header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
     }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; }
-    .nav-logo svg { color: var(--teal); }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { font-size: 14px; color: var(--muted); transition: color 0.15s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta {
-      display: flex; align-items: center; gap: 10px;
-      background: var(--teal); color: #fff;
-      font-weight: 700; font-size: 14px;
-      padding: 8px 20px; border-radius: 999px;
-      transition: opacity 0.15s;
+    header .eyebrow {
+      color: var(--teal);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    .nav-cta:hover { opacity: 0.88; }
-    .theme-btn {
-      background: none; border: 1px solid var(--border);
-      color: var(--muted); border-radius: 999px;
-      width: 34px; height: 34px; display: flex;
-      align-items: center; justify-content: center;
-      cursor: pointer; transition: border-color 0.15s, color 0.15s;
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 0.5rem;
+      letter-spacing: -0.02em;
     }
-    .theme-btn:hover { border-color: var(--teal); color: var(--text); }
-
-    /* ---- HERO ---- */
-    .hero {
-      position: relative; overflow: hidden;
-      padding: 100px 24px 80px;
+    header p {
+      color: var(--muted);
+      margin-top: 0.75rem;
+      font-size: 0.975rem;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 0 6rem;
+    }
+    section { margin-bottom: 2.5rem; }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+      color: var(--text);
+    }
+    p { color: var(--muted); font-size: 0.975rem; margin-bottom: 0.75rem; }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .callout {
+      background: var(--teal-dim);
+      border: 1px solid var(--teal-border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .callout p { color: var(--text); margin: 0; font-weight: 500; }
+    .callout strong { color: var(--text); }
+    .faq {
+      border-top: 1px solid var(--border);
+      padding: 1.1rem 0;
+    }
+    .faq:last-child { border-bottom: 1px solid var(--border); }
+    .faq h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .faq p { margin-bottom: 0; }
+    ul { color: var(--muted); font-size: 0.975rem; margin: 0 0 0.75rem 1.25rem; }
+    li { margin-bottom: 0.35rem; }
+    code {
+      font-family: var(--mono);
+      font-size: 0.85em;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.1em 0.4em;
+      color: var(--text);
+    }
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
       text-align: center;
     }
-    .hero-glow {
-      position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
-      width: 800px; height: 500px;
-      background: radial-gradient(ellipse 60% 60% at 50% 40%, rgba(0,212,170,0.22) 0%, transparent 70%);
-      pointer-events: none;
+    .contact-box .email {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: var(--mono);
     }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(var(--divider) 1px, transparent 1px),
-                        linear-gradient(90deg, var(--divider) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-    }
-    .hero-inner { position: relative; z-index: 1; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 5px 16px; border-radius: 999px;
-      border: 1px solid var(--teal-border);
-      background: var(--teal-dim);
-      color: var(--teal); font-family: var(--mono);
-      font-size: 12px; letter-spacing: 0.06em;
-      margin-bottom: 28px;
-    }
-    .elive { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
-    .hero h1 {
-      font-size: clamp(48px, 7vw, 88px);
-      font-weight: 900; letter-spacing: -0.04em; line-height: 1.0;
-      margin-bottom: 24px;
-    }
-    .hero h1 em { font-style: normal; color: var(--teal); }
-    .hero-sub {
-      font-size: clamp(16px, 2vw, 20px);
-      color: var(--muted); max-width: 560px;
-      margin: 0 auto 40px; line-height: 1.6;
-    }
-    .hero-actions { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--teal); color: #fff;
-      font-weight: 800; font-size: 16px;
-      padding: 14px 36px; border-radius: 999px;
-      transition: opacity 0.15s, transform 0.15s;
-    }
-    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1px solid var(--border);
-      color: var(--muted); font-size: 15px; font-weight: 500;
-      padding: 14px 28px; border-radius: 999px;
-      transition: border-color 0.15s, color 0.15s;
-    }
-    .btn-ghost:hover { border-color: var(--teal); color: var(--text); }
-    .hero-meta {
-      display: flex; align-items: center; justify-content: center;
-      gap: 32px; flex-wrap: wrap;
-    }
-    .hmeta { font-family: var(--mono); font-size: 11px; color: var(--faint); display: flex; align-items: center; gap: 6px; }
-    .hmeta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); opacity: 0.6; }
-
-    /* ---- APP MOCKUP ---- */
-    .mockup-wrap { padding: 0 24px 80px; }
-    .app-window {
-      max-width: 1000px; margin: 0 auto;
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      box-shadow: var(--shadow-card);
-      overflow: hidden;
-    }
-    .titlebar {
-      display: flex; align-items: center; gap: 12px;
-      padding: 13px 20px;
-      background: var(--surface2);
-      border-bottom: 1px solid var(--divider);
-    }
-    .traffic { display: flex; gap: 7px; }
-    .traffic span { width: 13px; height: 13px; border-radius: 50%; }
-    .tr { background: #ff5f57; } .ty { background: #febc2e; } .tg { background: #28c840; }
-    .win-title { flex: 1; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--muted); }
-    .live-badge {
-      display: flex; align-items: center; gap: 5px;
-      padding: 3px 10px; border-radius: 999px;
-      border: 1px solid var(--teal-border);
-      background: var(--teal-dim);
-      color: var(--teal); font-family: var(--mono); font-size: 10px;
-    }
-    .lbdot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); animation: pulse 1.5s infinite; }
-    .editor-panels { display: grid; grid-template-columns: 1fr 1fr; min-height: 400px; }
-    .ed-src {
-      padding: 28px 24px;
-      font-family: var(--mono); font-size: 13px; line-height: 1.9;
-      color: var(--muted); background: var(--surface);
-      border-right: 1px solid var(--divider); overflow: hidden;
-    }
-    .ed-rnd { padding: 28px 28px; background: var(--surface2); overflow: hidden; }
-    /* syntax colors */
-    .sy-h1 { color: #e879f9; font-weight: 700; font-size: 15px; }
-    .sy-h2 { color: #a78bfa; font-weight: 700; }
-    .sy-b  { color: var(--text); font-weight: 700; }
-    .sy-c  { color: var(--teal); background: rgba(0,212,170,0.1); padding: 0 5px; border-radius: 3px; }
-    .sy-s  { color: #f472b6; }
-    .sy-lk { color: #60a5fa; text-decoration: underline; }
-    /* rendered */
-    .rnd-h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; }
-    .rnd-h2 { font-size: 15px; font-weight: 700; margin: 18px 0 8px; }
-    .rnd-p  { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 10px; }
-    .rnd-cb {
-      background: var(--surface3); border: 1px solid var(--border);
-      border-radius: 6px; padding: 12px 14px;
-      font-family: var(--mono); font-size: 12px;
-      color: var(--teal); margin-bottom: 10px; line-height: 1.6;
-    }
-    .rnd-task { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-    .chk { width: 14px; height: 14px; border-radius: 3px; border: 1.5px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 9px; }
-    .chk-on { background: var(--teal); border-color: var(--teal); color: #000; }
-
-    /* ---- SECTION HELPERS ---- */
-    section { padding: 96px 0; }
-    section + section { border-top: 1px solid var(--divider); }
-    .sec-label { font-family: var(--mono); font-size: 11px; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
-    .sec-title { font-size: clamp(32px, 4vw, 52px); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 16px; }
-    .sec-body { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 600px; }
-
-    /* ---- STATS BAR ---- */
-    .stats-bar {
-      border-top: 1px solid var(--divider);
-      border-bottom: 1px solid var(--divider);
-      background: var(--surface);
-    }
-    .stats-inner {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      max-width: 1100px; margin: 0 auto;
-    }
-    .stat-item {
-      padding: 36px 24px; text-align: center;
-      border-right: 1px solid var(--divider);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-val { font-family: var(--mono); font-size: 42px; font-weight: 700; color: var(--teal); letter-spacing: -0.05em; line-height: 1; margin-bottom: 8px; }
-    .stat-lbl { font-size: 13px; color: var(--muted); }
-
-    /* ---- FEATURES BENTO ---- */
-    .bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 1px; background: var(--divider); border: 1px solid var(--divider); border-radius: var(--radius-lg); overflow: hidden; }
-    .bc {
-      background: var(--surface); padding: 32px 28px;
-      transition: background 0.15s;
-    }
-    .bc:hover { background: var(--surface2); }
-    .bc-wide { grid-column: span 2; }
-    .bc-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: var(--teal-dim); display: flex;
-      align-items: center; justify-content: center;
-      color: var(--teal); margin-bottom: 16px;
-    }
-    .bc-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
-    .bc-body { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
-    .bc-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-    .chip {
-      padding: 3px 10px; border-radius: 999px;
-      font-family: var(--mono); font-size: 10px;
-      border: 1px solid var(--teal-border);
-      color: var(--teal); background: var(--teal-dim);
-    }
-    .bc-stat { font-family: var(--mono); font-size: 36px; font-weight: 700; color: var(--teal); letter-spacing: -0.05em; line-height: 1; margin-bottom: 6px; }
-
-    /* ---- COMPARE TABLE ---- */
-    .compare-table { width: 100%; border-collapse: collapse; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--divider); }
-    .compare-table th, .compare-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--divider); font-size: 13.5px; }
-    .compare-table th { font-size: 11px; font-family: var(--mono); color: var(--muted); letter-spacing: 0.08em; background: var(--surface2); font-weight: 500; }
-    .compare-table tr:last-child td { border-bottom: none; }
-    .compare-table tr.hl td { background: color-mix(in srgb, var(--teal-dim) 80%, var(--surface)); }
-    .compare-table tr.hl td:first-child { font-weight: 700; color: var(--teal); }
-    .tick { color: var(--teal); font-weight: 700; }
-    .cross { color: var(--faint); }
-    .warn { color: #f59e0b; }
-
-    /* ---- WORKFLOW ---- */
-    .workflow-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--divider); border: 1px solid var(--divider); border-radius: var(--radius-lg); overflow: hidden; }
-    .ws {
-      background: var(--surface); padding: 32px 24px;
-    }
-    .ws-num { font-family: var(--mono); font-size: 11px; color: var(--teal); letter-spacing: 0.1em; margin-bottom: 16px; }
-    .ws-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
-    .ws-body { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    /* ---- PRICING ---- */
-    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 48px auto 0; }
-    .price-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius-xl); padding: 36px 32px;
-    }
-    .price-card.featured {
-      border-color: var(--teal);
-      background: color-mix(in srgb, var(--teal-dim) 60%, var(--surface));
-    }
-    .pc-badge {
-      display: inline-block; padding: 3px 12px;
-      border-radius: 999px; font-size: 11px; font-family: var(--mono);
-      background: var(--teal); color: #fff; font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .pc-name { font-size: 14px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
-    .pc-price { font-family: var(--mono); font-size: 52px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; margin-bottom: 4px; }
-    .pc-billing { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
-    .pc-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-    .pc-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--muted); }
-    .pc-features li .tick { flex-shrink: 0; margin-top: 1px; }
-    .pc-btn {
-      display: block; width: 100%; text-align: center;
-      padding: 13px; border-radius: 999px;
-      font-weight: 700; font-size: 15px;
-      transition: opacity 0.15s;
-    }
-    .pc-btn:hover { opacity: 0.85; }
-    .pc-btn-primary { background: var(--teal); color: #fff; }
-    .pc-btn-ghost { border: 1px solid var(--border); color: var(--muted); }
-
-    /* ---- FOOTER ---- */
     footer {
-      border-top: 1px solid var(--divider);
-      padding: 48px 32px;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-    .footer-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; }
-    .footer-brand svg { color: var(--teal); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: var(--muted); transition: color 0.15s; }
-    .footer-links a:hover { color: var(--text); }
-    .footer-copy { font-size: 12px; color: var(--faint); font-family: var(--mono); }
-
-    /* ---- MEDIA ---- */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .editor-panels { grid-template-columns: 1fr; }
-      .ed-src { display: none; }
-      .stats-inner { grid-template-columns: 1fr 1fr; }
-      .stat-item { border-right: none; border-bottom: 1px solid var(--divider); }
-      .bento { grid-template-columns: 1fr; }
-      .bc-wide { grid-column: span 1; }
-      .workflow-steps { grid-template-columns: 1fr 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .compare-table { font-size: 12px; }
-      .compare-table th, .compare-table td { padding: 10px 12px; }
-      footer { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">
-      <svg width="28" height="28" viewBox="0 0 512 512" aria-label="Epic MD Viewer logo">
-        <defs>
-          <linearGradient id="nav-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#7eb8ff"/>
-            <stop offset="50%" stop-color="#4a7ef5"/>
-            <stop offset="100%" stop-color="#6c3fff"/>
-          </linearGradient>
-        </defs>
-        <rect width="512" height="512" rx="114" fill="#0d0d0f"/>
-        <rect x="166" y="120" width="38" height="272" rx="14" fill="url(#nav-grad)"/>
-        <rect x="308" y="120" width="38" height="272" rx="14" fill="url(#nav-grad)"/>
-        <rect x="124" y="196" width="264" height="38" rx="14" fill="url(#nav-grad)"/>
-        <rect x="124" y="278" width="264" height="38" rx="14" fill="url(#nav-grad)"/>
-      </svg>
-      Epic MD Viewer
-    </div>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#compare">Compare</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#pricing">Pricing</a>
-    </div>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <button class="theme-btn" data-theme-toggle aria-label="Toggle dark mode">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <a href="#pricing" class="nav-cta">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        $9.99 on Mac App Store
-      </a>
-    </div>
-  </nav>
+<header>
+  <div class="eyebrow">Epic MD Viewer</div>
+  <h1>Support &amp; Help</h1>
+  <p>Epic MD Viewer is a fast, native Markdown viewer for macOS. It renders <code>.md</code>, <code>.markdown</code>, and <code>.mdx</code> files with GitHub Flavored Markdown — including tables, task lists, syntax highlighting, and Mermaid diagrams — and reloads instantly when a file changes on disk. One-time purchase on the Mac App Store, macOS 13 or later.</p>
+</header>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <div class="eyebrow"><span class="elive"></span> Now available on the Mac App Store</div>
-      <h1>Markdown done<br><em>right</em> on Mac.</h1>
-      <p class="hero-sub">A focused, native viewer for <code style="font-family:var(--mono);font-size:0.85em;background:var(--surface2);padding:2px 8px;border-radius:4px;">.md</code> files. Opens in under 500ms. Lives alongside your editor. One-time $9.99.</p>
-      <div class="hero-actions">
-        <a href="#pricing" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download on Mac App Store
-        </a>
-        <a href="#features" class="btn-ghost">
-          See all features
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-      <div class="hero-meta">
-        <span class="hmeta"><span class="hmeta-dot"></span> &lt;500ms launch</span>
-        <span class="hmeta"><span class="hmeta-dot"></span> &lt;80 MB RAM</span>
-        <span class="hmeta"><span class="hmeta-dot"></span> No Electron</span>
-        <span class="hmeta"><span class="hmeta-dot"></span> No subscription</span>
-        <span class="hmeta"><span class="hmeta-dot"></span> Data Not Collected</span>
-        <span class="hmeta"><span class="hmeta-dot"></span> macOS 13+</span>
-      </div>
-    </div>
+<main>
+
+  <div class="callout">
+    <p>Need help or have a question? Email <strong><a href="mailto:nunosiii@gmail.com?subject=Epic%20MD%20Viewer%20Support">nunosiii@gmail.com</a></strong> and we'll get back to you. We typically reply within 1&ndash;2 business days.</p>
   </div>
 
-  <!-- APP SCREENSHOT -->
-  <div class="mockup-wrap">
-    <img src="screenshots/screenshot-1-hero.png" alt="Epic MD Viewer showing a Markdown document with live rendering, document outline sidebar, and syntax highlighting" style="max-width:1000px;width:100%;margin:0 auto;display:block;border-radius:var(--radius-xl);box-shadow:var(--shadow-card);border:1px solid var(--border);">
-  </div>
+  <section>
+    <h2>Getting started</h2>
+    <ul>
+      <li><strong>Open a file:</strong> drag a Markdown file onto the app window or the Dock icon, double-click a <code>.md</code> file in Finder, or use <strong>File &rarr; Open</strong> (&#8984;O).</li>
+      <li><strong>Live reload:</strong> keep the file open in your editor — Epic MD Viewer re-renders automatically each time you save.</li>
+      <li><strong>Outline:</strong> use the sidebar to jump between headings in long documents.</li>
+      <li><strong>Appearance:</strong> switch between System, Light, and Dark themes from the View menu.</li>
+      <li><strong>Recent files:</strong> reopen recent documents from <strong>File &rarr; Open Recent</strong>.</li>
+    </ul>
+  </section>
 
-  <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div class="stat-item"><div class="stat-val">&lt;500ms</div><div class="stat-lbl">Cold launch on Apple Silicon</div></div>
-      <div class="stat-item"><div class="stat-val">&lt;80MB</div><div class="stat-lbl">RAM at idle</div></div>
-      <div class="stat-item"><div class="stat-val">200ms</div><div class="stat-lbl">Max live reload latency</div></div>
-      <div class="stat-item"><div class="stat-val">$9.99</div><div class="stat-lbl">One-time. Own it forever.</div></div>
+  <section>
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq">
+      <h3>Which file types are supported?</h3>
+      <p>Epic MD Viewer opens <code>.md</code>, <code>.markdown</code>, <code>.mdx</code>, <code>.mdown</code>, <code>.mkd</code>, and <code>.mdwn</code> files.</p>
     </div>
-  </div>
 
-  <!-- FEATURES -->
-  <section id="features">
-    <div class="container">
-      <div class="sec-label">// features</div>
-      <h2 class="sec-title">Everything you need.<br>Nothing you don&rsquo;t.</h2>
-      <p class="sec-body" style="margin-bottom:48px;">Built for developers and technical writers who want a dedicated markdown preview window alongside their editor &mdash; not another PKM vault or note-taking system.</p>
-      <div class="bento">
-        <div class="bc bc-wide">
-          <div class="bc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <div class="bc-title">Live file watching &mdash; 200ms reload</div>
-          <div class="bc-body">Epic MD Viewer monitors your file with FSEvents. When you hit &thinsp;<kbd style="font-family:var(--mono);font-size:11px;background:var(--surface3);padding:1px 6px;border-radius:3px;border:1px solid var(--border)">&macr;S</kbd>&thinsp; in VS Code, Cursor, Zed, Vim, or any text editor, the preview re-renders within 200ms. Your scroll position is preserved. No refresh button, no focus stealing &mdash; just instant output.</div>
-          <div class="bc-chips"><span class="chip">FSEvents</span><span class="chip">VS Code</span><span class="chip">Cursor</span><span class="chip">Zed</span><span class="chip">Any editor</span></div>
-        </div>
-        <div class="bc">
-          <div class="bc-stat">&lt;500ms</div>
-          <div class="bc-title">Native Swift performance</div>
-          <div class="bc-body">SwiftUI + WKWebView + cmark-gfm. Not Electron. Not a web wrapper. A real macOS app with a real dock icon, real window management, and a real launch time.</div>
-        </div>
-        <div class="bc">
-          <div class="bc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-          <div class="bc-title">Full GFM + Mermaid (offline)</div>
-          <div class="bc-body">cmark-gfm for GitHub Flavored Markdown. Bundled Mermaid.js for 9 diagram types. No network required for either.</div>
-          <div class="bc-chips"><span class="chip">Flowcharts</span><span class="chip">Sequence</span><span class="chip">Gantt</span><span class="chip">Class</span><span class="chip">Git graph</span></div>
-        </div>
-        <div class="bc">
-          <div class="bc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="15" y2="18"/></svg></div>
-          <div class="bc-title">Document Outline sidebar</div>
-          <div class="bc-body">Jump to any section instantly. The outline sidebar extracts all headings live. Click any entry to smooth-scroll there. Collapses when you want full-width reading.</div>
-        </div>
-        <div class="bc">
-          <div class="bc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-          <div class="bc-title">GFM task lists &amp; zoom</div>
-          <div class="bc-body">Read-only interactive checkboxes for GFM task lists. Pinch-to-zoom or use ⌘+ / ⌘− with persistent zoom level across reloads.</div>
-        </div>
-        <div class="bc">
-          <div class="bc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <div class="bc-title">20+ syntax languages</div>
-          <div class="bc-body">Swift, Python, JS, TypeScript, Rust, Go, SQL, YAML, Shell, JSON and more. Matching light and dark themes, bundled locally &mdash; no CDN.</div>
-        </div>
-      </div>
+    <div class="faq">
+      <h3>Can I edit files in the app?</h3>
+      <p>No. Epic MD Viewer is a read-only viewer — it never modifies your files. Edit in your favorite editor and watch the preview update live.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Does it support Mermaid diagrams and code highlighting?</h3>
+      <p>Yes. Fenced code blocks are syntax-highlighted, and <code>mermaid</code> code blocks render as diagrams automatically.</p>
+    </div>
+
+    <div class="faq">
+      <h3>My file isn't updating when I save it.</h3>
+      <p>Live reload watches the file on disk. If updates stop, close and reopen the file. If the problem persists, email us with your macOS version and a sample file.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Does the app collect any data or require a network connection?</h3>
+      <p>No. Epic MD Viewer works fully offline, makes no network requests, and collects no personal data. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
+    </div>
+
+    <div class="faq">
+      <h3>How do I request a feature or report a bug?</h3>
+      <p>Email <a href="mailto:nunosiii@gmail.com?subject=Epic%20MD%20Viewer%20Feedback">nunosiii@gmail.com</a> with as much detail as you can — including your macOS version and steps to reproduce any issue.</p>
     </div>
   </section>
 
-  <!-- COMPARE -->
-  <section id="compare">
-    <div class="container">
-      <div class="sec-label">// competitive_analysis</div>
-      <h2 class="sec-title">Why not the alternatives?</h2>
-      <p class="sec-body" style="margin-bottom:48px;">Every other option makes a meaningful compromise. Epic MD Viewer doesn&rsquo;t.</p>
-      <div style="overflow-x:auto;">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>App</th>
-              <th>Native macOS</th>
-              <th>Mermaid</th>
-              <th>Live Reload</th>
-              <th>Outline Sidebar</th>
-              <th>Price</th>
-              <th>Key issue</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="hl">
-              <td>Epic MD Viewer</td>
-              <td class="tick">&check;</td>
-              <td class="tick">&check;</td>
-              <td class="tick">&check;</td>
-              <td class="tick">&check;</td>
-              <td>$9.99 one-time</td>
-              <td style="color:var(--teal);font-size:12px;">None</td>
-            </tr>
-            <tr>
-              <td>Marked 2</td>
-              <td class="tick">&check;</td>
-              <td class="cross">&times;</td>
-              <td class="tick">&check;</td>
-              <td class="cross">&times;</td>
-              <td>$13.99 one-time</td>
-              <td style="color:var(--muted);font-size:12px;">No Mermaid, aging codebase</td>
-            </tr>
-            <tr>
-              <td>Marked 3</td>
-              <td class="tick">&check;</td>
-              <td class="tick">&check;</td>
-              <td class="tick">&check;</td>
-              <td class="tick">&check;</td>
-              <td>Subscription</td>
-              <td style="color:var(--muted);font-size:12px;">Subscription backlash</td>
-            </tr>
-            <tr>
-              <td>MacMD Viewer</td>
-              <td class="tick">&check;</td>
-              <td class="tick">&check;</td>
-              <td class="cross">&times;</td>
-              <td class="cross">&times;</td>
-              <td>$19.99 one-time</td>
-              <td style="color:var(--muted);font-size:12px;">No live reload, overpriced</td>
-            </tr>
-            <tr>
-              <td>Typora</td>
-              <td class="cross">&times;</td>
-              <td class="tick">&check;</td>
-              <td class="cross">&times;</td>
-              <td class="cross">&times;</td>
-              <td>$14.99 one-time</td>
-              <td style="color:var(--muted);font-size:12px;">Electron, editor not viewer</td>
-            </tr>
-            <tr>
-              <td>VS Code (built-in)</td>
-              <td class="cross">&times;</td>
-              <td class="warn">&sim;</td>
-              <td class="cross">&times;</td>
-              <td class="cross">&times;</td>
-              <td>Free</td>
-              <td style="color:var(--muted);font-size:12px;">Splits your editor, Electron</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <section>
+    <h2>Contact us</h2>
+    <div class="contact-box">
+      <p style="margin:0;">Questions, bug reports, and feature requests are all welcome.</p>
+      <a class="email" href="mailto:nunosiii@gmail.com?subject=Epic%20MD%20Viewer%20Support">nunosiii@gmail.com</a>
     </div>
   </section>
 
-  <!-- WORKFLOW -->
-  <section id="workflow">
-    <div class="container">
-      <div class="sec-label">// workflow</div>
-      <h2 class="sec-title">Your new markdown workflow.</h2>
-      <p class="sec-body" style="margin-bottom:48px;">Four steps. Zero friction. Works with the editor you already use.</p>
-      <div class="workflow-steps">
-        <div class="ws">
-          <div class="ws-num">01 //</div>
-          <div class="ws-title">Open your .md file</div>
-          <div class="ws-body">Drag from Finder, use File &rarr; Open, or double-click any .md file with Epic MD Viewer set as default. Opens in under 500ms.</div>
-        </div>
-        <div class="ws">
-          <div class="ws-num">02 //</div>
-          <div class="ws-title">Place it alongside your editor</div>
-          <div class="ws-body">Use macOS Split View or tile the windows side by side. Epic MD Viewer takes up exactly as much space as you give it &mdash; no sidebars, no panels.</div>
-        </div>
-        <div class="ws">
-          <div class="ws-num">03 //</div>
-          <div class="ws-title">Type in your editor. Watch it update.</div>
-          <div class="ws-body">Hit &thinsp;<kbd style="font-family:var(--mono);font-size:11px;background:var(--surface3);padding:1px 6px;border-radius:3px;border:1px solid var(--border)">&macr;S</kbd>&thinsp; in VS Code, Cursor, Zed, or Vim. The preview re-renders in under 200ms. Scroll position preserved.</div>
-        </div>
-        <div class="ws">
-          <div class="ws-num">04 //</div>
-          <div class="ws-title">Navigate with the outline</div>
-          <div class="ws-body">Click any heading in the outline sidebar to jump there instantly. Smooth scroll, always in sync with the live-reloaded document.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+</main>
 
-  <!-- PRICING -->
-  <section id="pricing">
-    <div class="container-narrow" style="text-align:center;">
-      <div class="sec-label">// pricing</div>
-      <h2 class="sec-title">Simple, honest pricing.</h2>
-      <p class="sec-body" style="margin:0 auto 0;">One-time purchase. No subscription. No free trial with paywalled features. All future updates included.</p>
-      <div style="max-width:420px;margin:48px auto 0;">
-        <div class="price-card featured">
-          <div class="pc-badge">ONE-TIME PURCHASE</div>
-          <div class="pc-name">Epic MD Viewer</div>
-          <div class="pc-price">$9.99</div>
-          <div class="pc-billing">Own it forever &mdash; all future updates included</div>
-          <ul class="pc-features">
-            <li><span class="tick">&check;</span> Live preview (re-renders in 200ms)</li>
-            <li><span class="tick">&check;</span> Full GFM + Mermaid (9 diagram types)</li>
-            <li><span class="tick">&check;</span> Syntax highlighting, 20+ languages</li>
-            <li><span class="tick">&check;</span> Document outline sidebar</li>
-            <li><span class="tick">&check;</span> Drag-and-drop &amp; Open Recent</li>
-            <li><span class="tick">&check;</span> Full light &amp; dark mode support</li>
-            <li><span class="tick">&check;</span> No subscription, no accounts, no telemetry</li>
-          </ul>
-          <a href="#" class="pc-btn pc-btn-primary">Buy on Mac App Store</a>
-        </div>
-      </div>
-      <p style="font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:24px;">// data_not_collected &middot; fully_sandboxed &middot; macOS_13+ &middot; universal_binary</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-brand">
-      <svg width="22" height="22" viewBox="0 0 512 512" aria-label="Epic MD Viewer">
-        <defs>
-          <linearGradient id="foot-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#7eb8ff"/>
-            <stop offset="50%" stop-color="#4a7ef5"/>
-            <stop offset="100%" stop-color="#6c3fff"/>
-          </linearGradient>
-        </defs>
-        <rect width="512" height="512" rx="114" fill="#0d0d0f"/>
-        <rect x="166" y="120" width="38" height="272" rx="14" fill="url(#foot-grad)"/>
-        <rect x="308" y="120" width="38" height="272" rx="14" fill="url(#foot-grad)"/>
-        <rect x="124" y="196" width="264" height="38" rx="14" fill="url(#foot-grad)"/>
-        <rect x="124" y="278" width="264" height="38" rx="14" fill="url(#foot-grad)"/>
-      </svg>
-      Epic MD Viewer
-    </div>
-    <div class="footer-links">
-      <a href="https://epicmd.app/support" target="_blank" rel="noopener noreferrer">Support</a>
-      <a href="https://epicmd.app/privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
-      <a href="#">Mac App Store</a>
-    </div>
-    <div class="footer-copy">&copy; 2026 Raul Martinez &middot; macOS 13+ &middot; $9.99 one-time</div>
-  </footer>
-
-  <script>
-    (function(){
-      const t = document.querySelector('[data-theme-toggle]');
-      const r = document.documentElement;
-      let d = 'dark';
-      t && t.addEventListener('click', () => {
-        d = d === 'dark' ? 'light' : 'dark';
-        r.setAttribute('data-theme', d);
-        t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
-        t.innerHTML = d === 'dark'
-          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
-      });
-    })();
-  </script>
+<footer>
+  &copy; 2026 Raul Martinez &mdash; Epic MD Viewer &middot; <a href="privacy.html">Privacy Policy</a>
+</footer>
 
 </body>
 </html>
